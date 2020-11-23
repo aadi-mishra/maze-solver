@@ -6,7 +6,7 @@ import lejos.utility.Delay;
 
 public class Task2 {
 	
-	public static void menu(int volume, int frequency, int duration) {
+	public static void menu(int volume, int frequency, int duration, int play) {
 		// Display the menu
 		
 		LCD.drawString("Menu",  2, 0);
@@ -16,7 +16,7 @@ public class Task2 {
 		LCD.drawString("Play",  2, 4);
 		LCD.drawString(" " + volume, LCD.DISPLAY_CHAR_WIDTH - 3, 1);
 		LCD.drawString(" " + frequency, LCD.DISPLAY_CHAR_WIDTH - 6, 2);
-		LCD.drawString(" " + duration,  LCD.DISPLAY_CHAR_WIDTH - 6, 3);	
+		LCD.drawString(" " + duration,  LCD.DISPLAY_CHAR_WIDTH - 6, 3);
 		
 	}
 
@@ -25,10 +25,11 @@ public class Task2 {
 		int volume = 0;
 		int frequency = 0; 
 		int duration = 0; 
+		int play = 0;
 		int y = 1;
 		
 		LCD.drawString(">", 0, y);
-		menu(volume, frequency, duration);
+		menu(volume, frequency, duration, play);
 		
 		while (Button.ESCAPE.isUp()){
 			
@@ -38,62 +39,79 @@ public class Task2 {
 				y--;
 				LCD.clear();
 				LCD.drawString(">", 0, y);
-				menu(volume, frequency, duration);
+				menu(volume, frequency, duration, play);
 				
 				if(y <= 1) {
-					y = 5;
+					y = 6;
 				}	
 			}
 			else if (ButtonID == 4) { // Button.DOWN.isDown()
 				y++;
 				LCD.clear();
 				LCD.drawString(">", 0, y);
-				menu(volume, frequency, duration);
+				menu(volume, frequency, duration, play);
 				
-				if(y >= 4) {
+				if(y >= 5) {
 					y = 0;
 				}
 			}
 			
-			if(Button.ENTER.isDown()) {
+			if(Button.RIGHT.isDown()) {
 				
 				if(ButtonID == 8) { // Button.RIGHT.isDown()
 					
 					if(y==1) {
 						volume += 10;
-						LCD.clear();
-						menu(volume, frequency, duration);
+						LCD.drawString(">", 0, y);
+						//LCD.clear();
+						menu(volume, frequency, duration, play);
 					}
 					else if(y==2) {
 						frequency += 100;
-						LCD.clear();
-						menu(volume, frequency, duration);
+						LCD.drawString(">", 0, y);
+						//LCD.clear();
+						menu(volume, frequency, duration, play);
 					}
 					else if (y==3) {
 						duration += 500;
-						LCD.clear();
-						menu(volume, frequency, duration);
-					} 
-					else if (ButtonID == 16) { // Button.LEFT.isDown()
-					
-						if(y==1) {
-							volume -= 10;
-							LCD.clear();
-							menu(volume, frequency, duration);
-						}
-						else if(y==2) {
-							frequency -= 100;
-							LCD.clear();
-							menu(volume, frequency, duration);
-						}
-						else if (y==3) {
-							duration -= 500;
-							LCD.clear();
-							menu(volume, frequency, duration);
-						}
+						LCD.drawString(">", 0, y);
+						//LCD.clear();
+						menu(volume, frequency, duration, play);
 					}
 				}
 			}
+			
+			if(Button.LEFT.isDown()) {
+				
+				if(ButtonID == 16) { // Button.LEFT.isDown()
+					
+					if(y==1) {
+						volume -= 10;
+						LCD.drawString(">", 0, y);
+						//LCD.clear();
+						menu(volume, frequency, duration, play);
+					}
+					else if(y==2) {
+						frequency -= 100;
+						LCD.drawString(">", 0, y);
+						//LCD.clear();
+						menu(volume, frequency, duration, play);
+					}
+					else if (y==3) {
+						duration -= 500;
+						LCD.drawString(">", 0, y);
+						//LCD.clear();
+						menu(volume, frequency, duration, play);
+					}
+				}
+			}
+			
+			if((Button.ENTER.isDown()) && (y==4)) {
+					
+					Sound.setVolume(volume);
+					Sound.playTone(frequency, duration);
+			}
+				
 		}
 	}
 }
