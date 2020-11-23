@@ -2,7 +2,6 @@ package de.tuhh.diss.lab.sheet2;
 import lejos.hardware.Button;
 import lejos.hardware.Sound;
 import lejos.hardware.lcd.LCD; 
-import lejos.utility.Delay;
 
 public class Task2 {
 	

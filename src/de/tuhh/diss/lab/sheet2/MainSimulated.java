@@ -16,7 +16,8 @@ public class MainSimulated {
 
 		// Here goes your Code!
 		//Task1.main(new String[0]);
-		Task2.main(new String[0]);
+		//Task2.main(new String[0]);
+		Task3.main(new String[0]);
 		
 		Delay.msDelay(100);
 		sim.stopSimulation();
