@@ -1,4 +1,4 @@
-package de.tuhh.diss.lab.sheet2;
+package de.tuhh.diss.lab.sheet4;
 
 import MazebotSim.MazebotSimulation;
 import MazebotSim.Visualization.GuiMazeVisualization;
@@ -15,10 +15,11 @@ public class MainSimulated {
 		sim.startSimulation();
 		gui.startVisualization();
 
-		//Task1.main(new String[0]);
-		Task2.main(new String[0]);
+		Task4_1.main(new String[0]);
 		
 		Delay.msDelay(100);
 		sim.stopSimulation();
+
 	}
+
 }
