@@ -1,5 +1,4 @@
 package de.tuhh.diss.lab.sheet2;
-import lejos.hardware.Button;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.MotorPort;
 import lejos.utility.Delay;
