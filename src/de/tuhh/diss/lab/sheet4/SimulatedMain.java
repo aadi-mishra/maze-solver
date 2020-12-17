@@ -4,7 +4,7 @@ import MazebotSim.MazebotSimulation;
 import MazebotSim.Visualization.GuiMazeVisualization;
 import lejos.utility.Delay;
 
-public class MainSimulated {
+public class SimulatedMain {
 
 	public static void main(String[] args) {
 		MazebotSimulation sim = new MazebotSimulation("Mazes/maze_1_3by4.png", 1.5,  1.5);
@@ -15,11 +15,11 @@ public class MainSimulated {
 		sim.startSimulation();
 		gui.startVisualization();
 
-		Task4_1.main(new String[0]);
+		// Here goes your Code!
+		//Task3_3.main(new String[0]);
 		
 		Delay.msDelay(100);
 		sim.stopSimulation();
-
 	}
 
 }

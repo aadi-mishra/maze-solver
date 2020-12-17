@@ -1,4 +1,4 @@
-package Lab3;
+package de.tuhh.diss.lab.sheet3;
 
 import MazebotSim.MazebotSimulation;
 import MazebotSim.Visualization.GuiMazeVisualization;
@@ -17,7 +17,7 @@ public class SimulatedMain {
 
 		// Here goes your Code!
 		//Task3_3.main(new String[0]);
-		Task_tests.main(new String[0]);
+		Task3_3.main(new String[0]);
 		
 		Delay.msDelay(100);
 		sim.stopSimulation();
