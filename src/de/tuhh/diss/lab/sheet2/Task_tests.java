@@ -1,4 +1,4 @@
-package Lab3;
+package de.tuhh.diss.lab.sheet2;
 
 import lejos.hardware.Button;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
@@ -12,7 +12,7 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.hardware.sensor.SensorMode;
 import lejos.robotics.Color;
 
-public class Task3_3 {
+public class Task_tests {
 	
 	// Robot Configuration 
 
@@ -20,7 +20,8 @@ public class Task3_3 {
 	public static EV3LargeRegulatedMotor rightMotor = new EV3LargeRegulatedMotor(MotorPort.B);
 	
 	public static void main(String[] args) {
-		//US sensor initial params
+
+	//US sensor initial params
 		EV3UltrasonicSensor ultrasonicSensor = new EV3UltrasonicSensor(SensorPort.S4);
 		final SampleProvider ultrasonicSensorSp = ultrasonicSensor.getDistanceMode(); // Object for US sensor 
 		float distance = 0; // Distance variable for US sensor 
@@ -31,6 +32,7 @@ public class Task3_3 {
 		final int MOTOR_SPEED = 300;
 				
 		while (Button.ESCAPE.isUp()) {
+			
 			// For Ultrasonic sensor data
 			ultrasonicSensorSp.fetchSample(sample, 0);
 			distance  = sample[0];
@@ -41,8 +43,11 @@ public class Task3_3 {
 				rightMotor.setSpeed(MOTOR_SPEED);
 				leftMotor.setSpeed(MOTOR_SPEED);
 				rightMotor.backward();
-				leftMotor.backward();	
-			} else {
+				leftMotor.backward();
+				
+			}
+				
+			else {
 				rightMotor.setSpeed(0);
 				leftMotor.setSpeed(0);
 				

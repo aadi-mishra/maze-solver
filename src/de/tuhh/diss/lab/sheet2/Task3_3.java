@@ -1,4 +1,4 @@
-package Lab3;
+package de.tuhh.diss.lab.sheet2;
 
 import lejos.hardware.Button;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
@@ -42,7 +42,8 @@ public class Task3_3 {
 				leftMotor.setSpeed(MOTOR_SPEED);
 				rightMotor.backward();
 				leftMotor.backward();	
-			} else {
+			}
+			else {
 				rightMotor.setSpeed(0);
 				leftMotor.setSpeed(0);
 				
