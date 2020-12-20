@@ -45,8 +45,8 @@ public class SimpleTurner implements Turner{
 		
 		// Counter clockwise turning angle is positive 
 		
-		rightMotor.rotate(angle, true);	// true - comes out of the method running while the motor turning the given angle, if false 
-		leftMotor.rotate(-angle, false);	// Left motor angle is negative due to turning motion of the robot		
+		rightMotor.rotate(-angle, true); 
+		leftMotor.rotate(angle, false);		
 	}
 
 }
