@@ -17,7 +17,8 @@ public class MainSimulated {
 		gui.startVisualization();
 
 		// Here goes your Code!
-		SimpleTurnerTest.main(new String[0]);
+		//SimpleTurnerTest.main(new String[0]);
+		GyroscopeTurnerTest.main(new String[0]);
 		
 		Delay.msDelay(100);
 		sim.stopSimulation();
