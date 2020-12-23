@@ -4,4 +4,4 @@ Found Issues:
 Comments:
 - do not use uppercaps for non-static variables
 Points:
-2/2
+1/2
