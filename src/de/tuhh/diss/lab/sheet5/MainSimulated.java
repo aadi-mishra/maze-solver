@@ -12,8 +12,8 @@ public class MainSimulated {
 		GuiMazeVisualization gui = new GuiMazeVisualization(1.5, sim.getStateAccessor());
 
 		sim.scaleSpeed(1);
-//		sim.setRobotPosition(0.35, 0.35, 90);
-		sim.setRobotPosition(0.75, 0.75, 90);
+		sim.setRobotPosition(0.525, 0.525, 90);
+//		sim.setRobotPosition(0.75, 0.75, 90);
 
 		sim.startSimulation();
 		gui.startVisualization();
