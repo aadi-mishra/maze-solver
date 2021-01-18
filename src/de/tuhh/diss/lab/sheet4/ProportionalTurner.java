@@ -1,12 +1,10 @@
 package de.tuhh.diss.lab.sheet4;
 
-import lejos.hardware.lcd.LCD;
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.SensorPort;
 import lejos.hardware.sensor.EV3GyroSensor;
 import lejos.robotics.SampleProvider;
-import lejos.utility.Delay;
 
 public class ProportionalTurner implements Turner{
 	
@@ -15,7 +13,6 @@ public class ProportionalTurner implements Turner{
 	private EV3GyroSensor gyroSensor = new EV3GyroSensor(SensorPort.S3);
 	
 	private int motorSpeed = 0;
-	private final int DELAY = 0;
 	private final int K_P = 10;
 	//private double error;
 
