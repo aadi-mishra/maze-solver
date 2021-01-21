@@ -74,7 +74,7 @@ public class Motors {
 			leftMotor.backward();
 			rightMotor.backward();
 
-		}while(difference<=-10);
+		}while(difference<=-14);
 	}
 	
 	public void moveForwardSlow() {
@@ -89,7 +89,7 @@ public class Motors {
 			rightMotor.backward();
 
 		}
-		while(difference<=-3);
+		while(difference<=-4);
 	}
 
 	public void moveBackward() {
@@ -103,7 +103,7 @@ public class Motors {
 			leftMotor.forward();
 			rightMotor.forward();				
 
-		}while(difference>-8);
+		}while(difference>-14);
 	}
 	
 	public void motorStop() {

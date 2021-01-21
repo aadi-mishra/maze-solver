@@ -5,9 +5,6 @@ import lejos.hardware.sensor.EV3ColorSensor;
 import lejos.hardware.sensor.SensorMode;
 import lejos.robotics.Color;
 
-/* This Class handles Color
- * 
- */
 public class ColorSensor {
 	
 	public String colorDetect() {
