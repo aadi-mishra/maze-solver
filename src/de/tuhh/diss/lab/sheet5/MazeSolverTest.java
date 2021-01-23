@@ -13,12 +13,12 @@ import lejos.hardware.lcd.LCD;
 public class MazeSolverTest {
 
 	// Create object for sensors, motors and usable classes
-		static UsSensor usObject = new UsSensor();
-		static ColorSensor colorObject = new ColorSensor();
-		static Beep beeper = new Beep();
-		static DisplayMenu menu = new DisplayMenu();
-		static Motors motors = new Motors();
-		static Gyro gyroObject = new Gyro();
+		private static UsSensor usObject = new UsSensor();
+		private static ColorSensor colorObject = new ColorSensor();
+		private static Beep beeper = new Beep();
+		private static DisplayMenu menu = new DisplayMenu();
+		private static Motors motors = new Motors();
+		private static Gyro gyroObject = new Gyro();
 		
 		private static final int RIGHT = -90;
 		private static final int LEFT = 90; 
@@ -26,8 +26,7 @@ public class MazeSolverTest {
 		private static final int MOVE_DISTANCE = -35;
 		private static final double TILE_CENTER = 17.5;
 		
-		public static void main(String[] args) {
-						
+		public static void main(String[] args) {	
 			wallFollower();
 		}
 		

@@ -20,7 +20,7 @@ public class MainSimulated {
 		gui.startVisualization();
 
 		// Here goes your Code!
-		MazeSolverTest.main(new String[0]);
+		MazeSolver.main(new String[0]);
 		
 		Delay.msDelay(100);
 		sim.stopSimulation();

@@ -91,7 +91,7 @@ public class DisplayMenu {
 			}
 		}
 		LCD.clear();
-		
+	
 		return colorName;	
 	}	
 }
