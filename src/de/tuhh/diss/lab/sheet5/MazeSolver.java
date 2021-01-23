@@ -18,7 +18,6 @@ public class MazeSolver {
 	private static Beep beeper = new Beep();
 	private static DisplayMenu menu = new DisplayMenu();
 	private static Motors motors = new Motors();
-	private static Gyro gyroObject = new Gyro();
 	
 	private static final int RIGHT = -90;
 	private static final int LEFT = 90; 
