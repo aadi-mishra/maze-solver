@@ -14,7 +14,12 @@ public class MazeSolverTest {
 		static Gyro gyroObject = new Gyro();
 		
 		private static final int RIGHT = -90;
-		private static final int LEFT = 90;
+		private static final int LEFT = 90; 
+		private static int[][] paths = new int[10][10];
+		private static int x_initial = 5;
+		private static int y_initial = 5;
+		private static int x_current;
+		private static int y_current;
 		
 		public static void main(String[] args) {
 						
@@ -36,20 +41,21 @@ public class MazeSolverTest {
 				LCD.drawString("F "+distances[0] , 0, 4);
 				LCD.drawString("L "+distances[1] , 0, 5);
 				LCD.drawString("R "+distances[2] , 0, 6);
+				paths[0][0] = 1;
 				
-				if (forwardDistance <= 14) {
+				if (forwardDistance <= 17.5) {
 					frontWall = true;
 				}else {
 					frontWall = false;
 					}
 				
-				if (leftDistance <= 14) {
+				if (leftDistance <= 17.5) {
 					leftWall = true;
 				}else {
 					leftWall = false;
 					}
 				
-				if (rightDistance <= 14) {
+				if (rightDistance <= 17.5) {
 					rightWall = true;
 				}else {
 					rightWall = false;
@@ -83,32 +89,20 @@ public class MazeSolverTest {
 					}else {
 						motors.moveBackward();
 						motors.turn(RIGHT);
-						motors.moveForward();
+						//motors.moveForwardX();
 					}
 				}// Left wall following algorithm
 				else if (leftWall == false) {
-//					motors.moveForwardSlow();
-//					isTarget = checkTarget(targetColor);
-//
-//					if (isTarget) {
-//						break;
-//					}
-//					motors.moveBackward();
+
 					motors.turn(LEFT);
-					motors.moveForward();
+					motors.moveForwardX();
 					
-				}else {
-					
+				}else {	
 					if (frontWall == false) {
-						motors.moveForward();
+						motors.moveForwardX();
 						
 					}else {
-//						motors.moveForwardSlow();
-//						isTarget = checkTarget(targetColor);
-//						if (isTarget) {
-//							break;
-//						}
-//						motors.moveBackward();
+
 						motors.turn(RIGHT);
 					}
 				}			
