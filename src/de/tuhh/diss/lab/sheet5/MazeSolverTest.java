@@ -1,6 +1,5 @@
 package de.tuhh.diss.lab.sheet5;
 
-import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 
 /**
