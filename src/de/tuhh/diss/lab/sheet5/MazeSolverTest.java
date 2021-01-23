@@ -16,10 +16,6 @@ public class MazeSolverTest {
 		private static final int RIGHT = -90;
 		private static final int LEFT = 90; 
 		private static int[][] paths = new int[10][10];
-		private static int x_initial = 5;
-		private static int y_initial = 5;
-		private static int x_current;
-		private static int y_current;
 		
 		public static void main(String[] args) {
 						
