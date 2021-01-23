@@ -3,6 +3,14 @@ package de.tuhh.diss.lab.sheet5;
 import lejos.hardware.Button;
 import lejos.hardware.lcd.LCD;
 
+/**
+ * @author Aadi Nath Mishra, Özge Beyza Albayrak
+ * 
+ * Implements the Wall Follower algorithm for the maze solving robot with left hand rule.
+ * Additionally other functionalities such as detecting dead ends, color target, wall detection, etc.
+ * are extended for a good navigation and problem solving. 
+ */
+
 public class MazeSolverTest {
 
 	// Create object for sensors, motors and usable classes
@@ -15,10 +23,17 @@ public class MazeSolverTest {
 		
 		private static final int RIGHT = -90;
 		private static final int LEFT = 90; 
-		private static int[][] paths = new int[10][10];
+		private static final int BACK_CW = -180; 
+		private static final int MOVE_DISTANCE = -35;
+		private static final double TILE_CENTER = 17.5;
 		
 		public static void main(String[] args) {
 						
+			wallFollower();
+		}
+		
+		public static void wallFollower() {
+			
 			float[] distances;
 			boolean leftWall;
 			boolean frontWall;
@@ -34,24 +49,19 @@ public class MazeSolverTest {
 				float leftDistance = distances[1];
 				float rightDistance =  distances[2];
 				
-				LCD.drawString("F "+distances[0] , 0, 4);
-				LCD.drawString("L "+distances[1] , 0, 5);
-				LCD.drawString("R "+distances[2] , 0, 6);
-				paths[0][0] = 1;
-				
-				if (forwardDistance <= 17.5) {
+				if (forwardDistance <= TILE_CENTER) {
 					frontWall = true;
 				}else {
 					frontWall = false;
 					}
 				
-				if (leftDistance <= 17.5) {
+				if (leftDistance <= TILE_CENTER) {
 					leftWall = true;
 				}else {
 					leftWall = false;
 					}
 				
-				if (rightDistance <= 17.5) {
+				if (rightDistance <= TILE_CENTER) {
 					rightWall = true;
 				}else {
 					rightWall = false;
@@ -85,17 +95,16 @@ public class MazeSolverTest {
 					}else {
 						motors.moveBackward();
 						motors.turn(RIGHT);
-						//motors.moveForwardX();
+						motors.moveForwardToDistance(MOVE_DISTANCE);
 					}
-				}// Left wall following algorithm
-				else if (leftWall == false) {
+				}else if (leftWall == false) {
 
 					motors.turn(LEFT);
-					motors.moveForwardX();
+					motors.moveForwardToDistance(MOVE_DISTANCE);
 					
 				}else {	
 					if (frontWall == false) {
-						motors.moveForwardX();
+						motors.moveForwardToDistance(MOVE_DISTANCE);
 						
 					}else {
 
@@ -103,15 +112,15 @@ public class MazeSolverTest {
 					}
 				}			
 			}while(true);
+			
 		}
-										
+								
 		public static float[] scanScore() {
 			float[] distanceParam  = new float[3];
 			distanceParam[0] = usObject.getDistance();
 			motors.turn(LEFT);
 			distanceParam[1] = usObject.getDistance();
-			motors.turn(RIGHT);
-			motors.turn(RIGHT);
+			motors.turn(BACK_CW);
 			distanceParam[2] = usObject.getDistance();
 			motors.turn(LEFT);
 			
@@ -128,7 +137,7 @@ public class MazeSolverTest {
 			
 			if (colorName == targetColor) {
 				target = true;
-				motors.motorStop();
+				motors.stop();
 				LCD.drawString("Target is " + colorName, 0, 0);
 				beeper.beepy();
 				
