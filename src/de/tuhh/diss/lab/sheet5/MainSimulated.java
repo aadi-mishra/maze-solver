@@ -8,7 +8,7 @@ public class MainSimulated {
 
 	public static void main(String[] args) {
 		
-		MazebotSimulation sim = new MazebotSimulation("Mazes/4x4_1.png", 1.4,  1.4);
+		MazebotSimulation sim = new MazebotSimulation("Mazes/4x4_2.png", 1.4,  1.4);
 		GuiMazeVisualization gui = new GuiMazeVisualization(1.4, sim.getStateAccessor());
 
 		sim.scaleSpeed(1);
